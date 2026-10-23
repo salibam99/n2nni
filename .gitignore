@@ -1,0 +1,37 @@
+# --- Raw data: never tracked. Only the processing scripts inside it are kept.
+data_ni_crocus/**
+!data_ni_crocus/**/
+!data_ni_crocus/**/*.py
+
+# --- Images, arrays and other binary outputs, anywhere in the repo
+*.fits
+*.fit
+*.sif
+*.tif
+*.tiff
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.bmp
+*.roi
+*.npy
+*.npz
+*.pkl
+*.h5
+*.hdf5
+*.zip
+*.pdf
+*.docx
+
+# --- Model checkpoints / training outputs
+*.pt
+*.pth
+*.ckpt
+runs/
+checkpoints/
+
+# --- Python
+__pycache__/
+*.pyc
+.ipynb_checkpoints/

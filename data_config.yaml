@@ -1,0 +1,30 @@
+# Data catalog configuration (paths relative to this file).
+# Rebuild with:  python -m n2n_data.build
+root: data_ni_crocus
+manifest: catalog/manifest.json
+
+min_frames: 2          # stacks with fewer unique frames are dropped
+exclude: []            # path substrings to ignore entirely
+
+# When the same file exists in several folders, keep the copy whose stack path
+# does NOT contain one of these (the re-organized / duplicated folders).
+prefer_last: [dupplicated, processing_python, scint_check, white_spots, blackbody,
+              LoD_trial, old_OB]
+
+# Force a role for stacks whose id contains the pattern: {pattern: object|ob|dc}
+role_overrides: {}
+
+# DC stacks not to use as dark reference (beam/afterglow contaminated)
+dc_exclude: [afterglow, withbeam, with_beam]
+
+# Manual OB/DC links for flat-field normalization (default: closest in time,
+# same exposure). Example:
+#   "2nd_CROCUS_Campaign/Wednesday-15-April-2026/Polyethyelene membranes-3x5 min":
+#     {ob: "2nd_CROCUS_Campaign/Wednesday-15-April-2026/eljen_scint_OB"}
+links: {}
+
+# Validation set: whole stacks, ~val_fraction of object+ob frames. Once the
+# manifest exists, assignments are kept on rebuild (val stays constant).
+val_fraction: 0.2
+seed: 0
+val_stacks: []         # optional: stack ids forced into val
