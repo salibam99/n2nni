@@ -24,12 +24,20 @@ data_ni_crocus/**
 *.pdf
 *.docx
 
-# --- Model checkpoints / training outputs
+# --- Training outputs: weights, logs, run folders (wherever --out points)
 *.pt
 *.pth
 *.ckpt
+*.safetensors
+*.onnx
+*.log
+*.out
 runs/
 checkpoints/
+wandb/
+lightning_logs/
+events.out.tfevents.*
+**/log.csv
 
 # --- Python
 __pycache__/
